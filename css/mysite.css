@@ -7,7 +7,8 @@ body
 .mynav 
 {
 
-    
+   
+	width: 170px;
     text-align: left;
     height: 200px;
     position: absolute;
@@ -28,6 +29,7 @@ body
     text-align: center;
     text-decoration: none;
     color: rgba(255,255,255,.5);
+	cursor: pointer;
 }
 
 .mynav li
@@ -38,7 +40,6 @@ body
     margin-left: 0;
     margin-right: 0;
     right:0px;
-    cursor:pointer;
     color: #5F8599;
 }
 .actives2

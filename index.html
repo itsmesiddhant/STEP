@@ -49,11 +49,11 @@
 </nav>
         <!----------------------------------------------------------!-->
         
-        <div class="mynav hidden-xs">
+        <div class="mynav hidden-xs nav navbar navbar-fixed">
         
-            <ul>
+            <ul id="mynav-ul">
 			
-				<nav>
+				
 					<li><div class="glyphicon glyphicon-flag " id="s3" style="display:none"></div></li>
                 <li class="s3"><a href="#step3" >Step 3</a><li>
                 
@@ -62,7 +62,7 @@
                 
 					<li><div class="glyphicon glyphicon-flag"  id="s1" style="display:none"></div></li>
                 <li class="s1"><a href="#step1" >Step 1</a></li>
-				</nav>
+				
             </ul>
         </div>
         
@@ -168,7 +168,7 @@
             $(document).ready(cloud);
               setInterval(cloud,15000);                
         
-            
+            //**********************function to animate clouds **********************
             function cloud()
             {
                 $("#cloud1").animate({left: "-25%"},30000,"linear");
@@ -181,54 +181,155 @@
                 
             }
                 
+			//***********handle clicks of mynav*********************
             $(function()
               
               { 
-               console.log("yes");
-                $("a[href^='#']").click(function(e){
+               var pause=false;
+				
+				//***********Step 1****************************
+                $(".s1 a").click(function(e){
+					pause=true;
 e.preventDefault();
-                    
+                    console.log("s1");
                     $(this).effect("pulsate",{times:10},300);
 
-                    var step =3- ($(this).index());
+					$("#s3").removeClass("actives3",300);
+				    $("#s2").removeClass("actives2",300);
+					$("#s1").addClass("actives1",300);
+					
+					$("#s1").effect("bounce",1000);
+      
 
-                    console.log($(this).index());
-					var background = "";
-
-                    if (step == 1) 
-
-                    {
-
-                        background = "#21B9EB" //light blue
-
-                        $("#s1").addClass(".actives1",300);
-
-                    } 
-                    else if (step == 2) 
-
-                    {
-
-                        background = "#146FA6" //blue
-
-                        $("#s2").addClass(".actives2",300);
-
-                    } 
-                    else if (step == 3)
-                    {
-
-                        background = "#6B238E" //purple
-                        $("#s3").addClass("actives3",300);
-
-                    }
+					
                     
+					
+					
+					var background = "rgb(33,185,235)";
+
+					
+					
                     var pos = $(this.hash).offset().top - 50;
 
-                    $("body, html").stop().animate({ scrollTop:pos,
+                    $("body").stop().animate({ scrollTop:pos,
 
-                                                    backgroundColor:background }, 1000);
+                                                    backgroundColor:background }, 1000,release);
                     
                     
 });
+				//***********Step 2***************************
+				
+                $(".s2 a").click(function(e){
+					pause=true;
+e.preventDefault();
+                    console.log("s2");
+					$("#s3").removeClass("actives3",300);
+					$("#s1").removeClass("actives1",300);
+					$("#s2").addClass("actives2",300);
+					$("#s2").effect("bounce",1000);
+                    $(this).effect("pulsate",{times:10},300);
+
+                    
+
+                    
+					var background = "rgb(20,111,166)";
+					
+					
+                    var pos = $(this.hash).offset().top - 50;
+
+                    $("body").stop().animate({ scrollTop:pos,
+
+                                                    backgroundColor:background }, 1000,release);
+                    
+                   
+					
+});
+				//*****************Step 3***********************
+				
+                $(".s3 a").click(function(e){
+					
+
+					pause=true;
+					e.preventDefault();
+					
+                    console.log("s3");
+                    $(this).effect("pulsate",{times:10},300);
+
+					$("#s1").removeClass("actives1",300);
+					$("#s2").removeClass("actives2",300);
+					$("#s3").addClass("actives3",300);
+					$("#s3").effect("bounce",1000);
+             
+
+                   
+					var background = "#6B238E";
+					
+					
+                    var pos = $(this.hash).offset().top - 50;
+
+                    $("body").stop().animate({ scrollTop:pos,
+
+                                                    backgroundColor:background }, 1000,release);
+					window.location.hash = this.hash;
+                    
+                    
+});
+				
+				//***************release pause****************
+				
+				function release()
+				{
+					pause=false;
+					console.log("release");
+				}
+				
+				
+				
+				//***********************************handle scroll******************************
+				
+				$(window).scroll(function() {
+
+                  var y=$(window).scrollTop();
+                  console.log(y);
+					
+					//------step 1---------
+                  if(y>=400 && y<800 && pause==false)
+                      {
+						  console.log("step 1")
+                      $("body").stop().animate({
+backgroundColor:"rgb(33,185,235)" }, 500);
+						  $("#s1").addClass("actives1",300);
+						  $("#s3").removeClass("actives3",300);
+						  $("#s2").removeClass("actives2",300);
+					  }
+				
+					//------step 2---------
+					else if(y>=800 && y<1200 && pause==false)
+                      {
+						  console.log("step 2");
+                      $("body").stop().animate({
+backgroundColor:"rgb(20,111,166)" }, 500);
+						  $("#s2").addClass("actives2",300);
+						  $("#s3").removeClass("actives3",300);
+						  $("#s1").removeClass("actives1",300);
+						   
+					  }
+				
+				
+					//------step 3---------
+					else if(y>=1200 && pause==false)
+                      {
+						  console.log("step 3");
+                      $("body").stop().animate({
+backgroundColor:"#6B238E" }, 500);
+						  $("#s3").addClass("actives3",300);
+						  $("#s1").removeClass("actives1",300);
+						  $("#s2").removeClass("actives2",300);
+					  }
+				
+			
+				});
+				
               });
         </script>
     </body>
