@@ -1,0 +1,191 @@
+body 
+{
+    background:#B1DDEB;
+    height: 100% !important;
+}
+
+.mynav 
+{
+
+    
+    text-align: left;
+    height: 200px;
+    position: absolute;
+    padding: 0;
+    position:fixed;
+    right:0;
+    top:300px;
+    text-align:center;
+    
+    
+}
+.mynav ul
+{
+    list-style-type: none;
+}
+.mynav a
+{
+    text-align: center;
+    text-decoration: none;
+    color: rgba(255,255,255,.5);
+}
+
+.mynav li
+{
+    position: absolute;
+    background:#080808;
+    margin-bottom: 1px;
+    margin-left: 0;
+    margin-right: 0;
+    right:0px;
+    cursor:pointer;
+    color: #5F8599;
+}
+.actives2
+{
+    display:block !important;
+    position: absolute;
+    top:42px;
+    right:82px;
+    font-size: 40px;
+    color:black;
+}
+.actives3
+{
+    display:block !important;
+    position: absolute;
+    top:0px;
+    right:40px;
+    font-size: 40px;
+    color:black;
+}
+.actives1
+{
+    display:block !important;
+    position: absolute;
+    top:89px;
+    right:120px;
+    font-size: 40px;
+    color:black;
+}
+.separator
+{
+    background-color: rgba(0,0,0,0);
+    left: 0;
+    padding:1px;
+}
+
+.s3
+{
+    font-size: 18px;
+    width: 80px;
+    height: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    top:40px;
+}
+.s2
+{
+    font-size: 20px;
+    width: 120px;
+   height: 45px ;
+    top:82px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+
+.s1
+{
+    font-size: 24px;
+    width: 160px;
+    height: 50px;
+    top:129px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+
+.main
+{
+   height: 100% !important;
+    width: 100%;
+    
+    
+}
+.content
+{
+    
+    
+    height: 600px;
+    
+    min-height: 100% !important;
+    max-height: 100%;
+}
+
+div
+{
+    background-color: rgba(0,0,0,0);
+}
+.jumbotron
+{
+    background-color:rgba(0 ,0 , 0 , 0);
+    align-content: center !important;
+    text-align: center;
+}
+#cloud1 , #cloud2
+{
+    position:fixed;
+    left:1000px;
+    max-width:1000px;
+    margin:0;
+    padding:0;
+    opacity:.2;
+    z-index:-1;
+    
+}
+#cloud1 img, #cloud2 img
+{
+    width:250px;
+    height: 250px;
+}
+
+#banner
+{
+
+    background-color: rgba(0,0,0,.8);
+    backface-visibility: ;
+    color:azure;
+    position: absolute;
+height:100%;
+    width:100%;
+    margin: 0px;
+    padding: 0px;
+    left: 0;
+    top:0;
+}
+#banner h1
+{
+    left: 45%;
+    top: 60%;
+    padding-left: 42%;
+    padding-top: 15%;
+}
+#banner hr
+{
+    position: relative;
+    padding-top: 0;
+    z-index: 0;
+    width: 40%;
+}
+#chip
+{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    left: 45%;
+    top: 60%;
+    align:center;
+    position: relative;
+    z-index: 12;
+}
