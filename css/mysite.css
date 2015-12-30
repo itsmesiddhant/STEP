@@ -6,8 +6,6 @@ body
 
 .mynav 
 {
-
-   
 	width: 170px;
     text-align: left;
     height: 200px;
@@ -17,12 +15,14 @@ body
     right:0;
     top:300px;
     text-align:center;
-    
+    z-index: 1000;
     
 }
 .mynav ul
 {
     list-style-type: none;
+	width: 170px;
+	height: 200px;
 }
 .mynav a
 {
@@ -44,7 +44,7 @@ body
 }
 .actives2
 {
-    display:block !important;
+    display:none;
     position: absolute;
     top:42px;
     right:82px;
@@ -53,7 +53,7 @@ body
 }
 .actives3
 {
-    display:block !important;
+    display:none;
     position: absolute;
     top:0px;
     right:40px;
@@ -62,7 +62,7 @@ body
 }
 .actives1
 {
-    display:block !important;
+    display:none;
     position: absolute;
     top:89px;
     right:120px;

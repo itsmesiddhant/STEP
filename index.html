@@ -54,13 +54,13 @@
             <ul id="mynav-ul">
 			
 				
-					<li><div class="glyphicon glyphicon-flag " id="s3" style="display:none"></div></li>
+					<li><div class="glyphicon glyphicon-flag actives3" id="s3" ></div></li>
                 <li class="s3"><a href="#step3" >Step 3</a><li>
                 
-					<li><div class="glyphicon glyphicon-flag" id="s2" style="display:none"></div></li>
+					<li><div class="glyphicon glyphicon-flag actives2 " id="s2" ></div></li>
                 <li class="s2"><a href="#step2" >Step 2</a><li>
                 
-					<li><div class="glyphicon glyphicon-flag"  id="s1" style="display:none"></div></li>
+					<li><div class="glyphicon glyphicon-flag actives1"   id="s1" ></div></li>
                 <li class="s1"><a href="#step1" >Step 1</a></li>
 				
             </ul>
@@ -194,12 +194,10 @@ e.preventDefault();
                     console.log("s1");
                     $(this).effect("pulsate",{times:10},300);
 
-					$("#s3").removeClass("actives3",300);
-				    $("#s2").removeClass("actives2",300);
-					$("#s1").addClass("actives1",300);
-					
+					$("#s3").fadeOut(300);
+					$("#s2").fadeOut(300);
+					$("#s1").fadeIn(300);
 					$("#s1").effect("bounce",1000);
-      
 
 					
                     
@@ -223,9 +221,9 @@ e.preventDefault();
 					pause=true;
 e.preventDefault();
                     console.log("s2");
-					$("#s3").removeClass("actives3",300);
-					$("#s1").removeClass("actives1",300);
-					$("#s2").addClass("actives2",300);
+					$("#s1").fadeOut(300);
+					$("#s3").fadeOut(300);
+					$("#s2").fadeIn(300);
 					$("#s2").effect("bounce",1000);
                     $(this).effect("pulsate",{times:10},300);
 
@@ -255,9 +253,9 @@ e.preventDefault();
                     console.log("s3");
                     $(this).effect("pulsate",{times:10},300);
 
-					$("#s1").removeClass("actives1",300);
-					$("#s2").removeClass("actives2",300);
-					$("#s3").addClass("actives3",300);
+					$("#s1").fadeOut(300);
+					$("#s2").fadeOut(300);
+					$("#s3").fadeIn(300);
 					$("#s3").effect("bounce",1000);
              
 
@@ -298,9 +296,10 @@ e.preventDefault();
 						  console.log("step 1")
                       $("body").stop().animate({
 backgroundColor:"rgb(33,185,235)" }, 500);
-						  $("#s1").addClass("actives1",300);
-						  $("#s3").removeClass("actives3",300);
-						  $("#s2").removeClass("actives2",300);
+						  $("#s3").fadeOut(300);
+					$("#s2").fadeOut(300);
+					$("#s1").fadeIn(300);
+					
 					  }
 				
 					//------step 2---------
@@ -309,9 +308,10 @@ backgroundColor:"rgb(33,185,235)" }, 500);
 						  console.log("step 2");
                       $("body").stop().animate({
 backgroundColor:"rgb(20,111,166)" }, 500);
-						  $("#s2").addClass("actives2",300);
-						  $("#s3").removeClass("actives3",300);
-						  $("#s1").removeClass("actives1",300);
+						  $("#s1").fadeOut(300);
+					$("#s3").fadeOut(300);
+					$("#s2").fadeIn(300);
+					
 						   
 					  }
 				
@@ -322,9 +322,10 @@ backgroundColor:"rgb(20,111,166)" }, 500);
 						  console.log("step 3");
                       $("body").stop().animate({
 backgroundColor:"#6B238E" }, 500);
-						  $("#s3").addClass("actives3",300);
-						  $("#s1").removeClass("actives1",300);
-						  $("#s2").removeClass("actives2",300);
+						  $("#s1").fadeOut(300);
+					$("#s2").fadeOut(300);
+					$("#s3").fadeIn(300);
+					
 					  }
 				
 			
